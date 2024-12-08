@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghana Katta - Data Analytics Engineer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --accent: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header/Intro Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #2563eb11, #1e40af11);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.05;
+            top: -100%;
+            left: -100%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '▹';
+            color: var(--primary);
+        }
+
+        /* Education Section */
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-date {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title i {
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+    <!-- Hero/Intro Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Meghana Katta</h1>
+            <p>Data Analytics Engineer specializing in machine learning and predictive modeling. Masters student at George Mason University with a passion for transforming complex data into actionable insights.</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">Big Data</span>
+            </div>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture</title>
+    <style>
+        .profile-container {
+            display: flex;
+            justify-content: center; /* Centers the image horizontally */
+            align-items: center; /* Centers the image vertically */
+            height: 100vh; /* Full viewport height to vertically center the image */
+        }
+
+        .profile-image img {
+            width: 200px; /* Adjust the size of the image */
+            height: 200px; /* Same as width for a perfect circle */
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover; /* Ensures the image covers the entire area without distortion */
+        }
+    </style>
+</head>
+<body>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="/Users/bhavanakatta/Downloads/portfolio/profile-pic.jpeg" alt="Profile Picture">
+            </div>
+        </div>    
+    </section>
+
+</body>
+</html>  
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">DYNAMIC PRICING USING MACHINE LEARNING (2024)</h3>
+                        <p class="project-description">Implemented a dynamic pricing system using machine learning techniques, including regression analysis and reinforcement learning. Analyzed customer behavior and market trends to optimize pricing strategies. Enhanced revenue management through predictive analytics and real-time adjustments.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Reinforcement Learning</span>
+                            <span class="tech-tag">Predictive Modeling</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/dynamic-pricing-using-ml-models" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>    
+                    </div>
+                </div>    
+            
+                <!-- SMS Spam Detection Project -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Multilingual SMS Spam Detection (2024)</h3>
+                        <p class="project-description">Developed an NLP model for detecting multilingual SMS spam, achieving 92% accuracy. Utilized Python libraries like Scikit-learn and SpaCy for effective preprocessing and classification.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Text Processing</span>
+                        </div>
+                        <a href="https://github.com/meghanakatta2905/SMS-Spam-Detection-Using-Natural-Language-Processing" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Auto Claims Insurance Project -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Analyzing Auto Claims Insurance (2024)</h3>
+                        <p class="project-description">Developed a machine learning predictive model to identify fraudulent claims, resulting in a 15% reduction in losses. Created interactive dashboard for claim trends visualization.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">R</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Statistics</span>
+                        </div>
+                        <a href="https://github.com/meghanakatta2905/analyzing-auto-claims-insurance" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i> 
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Analyzing Youth Tobacco Data(2024)</h3>
+                            <p>Conducted comprehensive analysis of National Youth Tobacco Survey data to identify trends in e-cigarette usage among middle and high school students. Developed predictive models to determine key factors influencing youth smoking curiosity, achieving 85% accuracy in identifying at-risk adolescents.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Exploratory Data Analysis</span>
+                                <span class="tech-tag">Statistical Analysis</span> 
+                            </div>    
+                            <a href="https://github.com/meghanakatta2905/youth-tobacco-data" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>    
+                
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Border-Crossing-Entry-Data Analysis(2023)</h3>
+                        <p>Analyzed border crossing data to forecast traffic volumes using Random Forest regression and geographic data. Enhanced resource allocation and planning with insights from model predictions.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Random Forest Regression</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/Border-crossing-entry-data" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Rent Price Trends In The US: Redesigned Visualization (2023)</h3>
+                        <p>Utilized R and Python to create detailed visualizations and analyze rent price trends across the US. Applied correlation matrices, linear regression analysis, and heatmaps to identify patterns. Redesigned data presentation using Tableau for clearer insights into regional rent variations. Enhanced data storytelling skills with improved visual clarity.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">R</span>
+                            <span class="tech-tag">ggplot2</span>
+                            <span class="tech-tag">Heatmaps & Correlation Matrices</span>
+                            <span class="tech-tag">Linear Regression</span>
+                            <span class="tech-tag">Storytelling with Data</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/Regional-Price-Parity-for-each-state" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>    
+                    </div> 
+                </div>    
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Newspaper Subscriber Trends Prediction Analysis (2023)</h3>
+                            <p>Analyzed a dataset of 50,000 newspaper subscriptions using Python and SQL to build predictive models with 90% accuracy. Leveraged Pandas and Scikit-learn for trend forecasting and presented findings with Tableau and Matplotlib to enhance subscriber retention.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Time Series Analysis</span>
+                                <span class="tech-tag">Model Evaluation</span>
+                            </div>    
+                            <a href="https://github.com/meghanakatta2905/newspaper-subscriber-trends-prediction-analysis" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Predicting-Hotel-reservation-cancellation</h3>
+                        <p>Engineered a machine learning model to predict hotel booking cancellations, leveraging features such as lead time, deposit type, and market segment. Achieved 85% accuracy in identifying potential cancellations, enabling proactive overbooking strategies and optimizing revenue management for the hotel</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Random Forest</span>
+                            <span class="tech-tag">Data visualization</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/Predicting-Hotel-reservation-cancellation" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>           
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Location Prediction on twitter using ml techniques(2022)</h3>
+                        <p>Developed a Naive Bayes classifier to predict Twitter user locations based on tweet metadata and content. Analyzed over 10,000 tweets, achieving 85% accuracy and published results in YMER.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/Location-Prediction-on-twitter-using-ml-techniques" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>           
+                    </div>
+                </div>   
+
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Water Supply Risk Analysis (2022)</h3>
+                        <p>Conducted a quality risk analysis for sustainable smart water supply using big data. Applied statistical techniques and data visualization to identify key risks and improve water management strategies.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Tableau</span>
+                        </div>    
+                        <a href="https://github.com/meghanakatta2905/SMART-WATER-SUPPLY-RISK-ANALYSIS" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>           
+                </div>
+
+
+                    <!-- Additional projects follow the same pattern -->
+                <!-- [Previous projects remain the same, just styled consistently with the new design] -->
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Matplotlib</li>
+                        <li>Seaborn</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Big Data & Cloud</h3>
+                    <ul class="skill-list">
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Apache Spark</li>
+                        <li>Hadoop</li>
+                        <li>Google Cloud</li>
+                        <li>Spark</li>
+                        <li>Databricks</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>TOOLS</h3>
+                <ul class="skill-list">
+                    <li>Excel</li>
+                    <li>PowerBI</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Tableau</li>
+                </ul>
+            </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Time Series Analysis</li>
+                        <li>Regression Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-card">
+                    <div class="education-date">Jan 2023 - Dec 2024</div>
+                    <h3>George Mason University</h3>
+                    <p>Masters, Data Analytics Engineering</p>
+                    <p>GPA: 3.7</p>
+                    <p>Fairfax, Virginia, USA</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-date">Aug 2018 - Sep 2022</div>
+                    <h3>Sreyas Institute of Engineering and Technology</h3>
+                    <p>Bachelor of Engineering</p>
+                    <p>GPA: 3.0</p>
+                    <p>Bandlaguda, Telangana, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Google Data Analytics Professional Certificate</h3>
+                    </div>
+                    <p>Coursera - October 2022</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Smart Analytics, ML, and AI on Google Cloud</h3>
+                    </div>
+                    <p>Google Cloud - May 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Data Analysis with Python</h3>
+                    </div>
+                    <p>Coursera - July 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Data Visualization with Python</h3>
+                    </div>
+                    <p>Coursera - March 2022</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Databases and SQL for Datascience with Python</h3>
+                    </div>
+                    <p>Coursera - May 2022</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Exploring and Preparing your Data with BigQuery</h3>
+                    </div>
+                    <p>Coursera - January 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Modernizing data goggle cloud</h3>
+                    </div>
+                    <p>Coursera - June 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-title">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Google Cloud Big Data and Machine Learning Fundamentals</h3>
+                    </div>
+                    <p>Coursera - May 2024</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        
+    <section id="publication-content" class="section">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <h2>YMER Publication</h2>
+            <p>Location prediction on Twitter was performed using machine learning techniques to analyze user-generated content and metadata. The study likely employed methods like text analysis, pattern recognition, and geospatial features to determine users' locations based on their tweets and profile information. The research findings were published in (YMER Volume 21, Issue 05, May 2022 issue), contributing to the growing field of social media analytics and geographic inference.</p>
+        </div>
+    </section> 
+        
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+              <div class="contact-info">
+                <p>Looking for opportunities in Data Analytics and Machine Learning</p>
+                <p>Email: meghanakatta26@gmail.com</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/meghana-katta" target="_blank"><i class="fab fa-linkedin"></i></a>
+                  <a href="mailto:meghanakatta26@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </body>
+        </html>
+    </section>
+</body>
+</html>
